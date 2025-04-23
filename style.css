@@ -420,3 +420,103 @@ footer {
     transform: translateY(0);
 }
 
+/* General styles for smaller screens */
+@media (max-width: 768px) {
+    /* Navbar */
+    #navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #menu.items {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 20px;
+    }
+
+    #logo img {
+        width: 150px;
+        height: auto;
+    }
+
+    /* Main content */
+    #big-sizetext {
+        font-size: 30px;
+        top: -100px;
+    }
+
+    #blackbox h2 {
+        font-size: 30px;
+    }
+
+    #blackbox .designsbykakdiyagrahic p {
+        font-size: 18px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-container {
+        padding: 50px 20px;
+    }
+
+    .portfolio-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .portfolio-item {
+        width: 100%;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us-simple h2 {
+        font-size: 40px;
+    }
+
+    .big-words span {
+        font-size: 50px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo img {
+        width: 150px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    #menu.items {
+        font-size: 18px;
+    }
+
+    #big-sizetext {
+        font-size: 24px;
+    }
+
+    .portfolio-container h2 {
+        font-size: 24px;
+    }
+
+    .why-choose-us-simple h2 {
+        font-size: 30px;
+    }
+
+    .big-words span {
+        font-size: 36px;
+    }
+
+    .footer-links h3,
+    .footer-contact h3 {
+        font-size: 18px;
+    }
+}
+
