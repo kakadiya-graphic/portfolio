@@ -3,22 +3,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-    scroll-behavior: smooth;
 }
 
 html, body{
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
 }
 
 #main{
     height: 100%;
     width: 100%;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #main #background {
@@ -49,11 +44,21 @@ html, body{
     width: 100%;
     height: auto;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(15px);
 }
 
-#navbar.scrolled {
+#navbar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    transition: background-color 0.3s ease-out;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+}
+#navbar.scrolled #navbar-bg {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -66,11 +71,6 @@ a{
     text-decoration: none; 
     color: rgb(255, 255, 255);
     font-size: 25px;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #b08347;
 }
 
 #menu.items{
@@ -88,6 +88,10 @@ a:hover {
     overflow: hidden;
 }
 
+#menu.items a:hover {
+    color: #b08347;
+}
+
 /* main body */
 #big-sizelogo {
     position: relative;
@@ -100,6 +104,7 @@ a:hover {
     left: auto;
     right: auto;
 }
+
 
 #big-sizetext {
     position: relative; 
@@ -114,8 +119,10 @@ a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+
 #blackbox {
     background-color:rgb(27, 27, 27);
+    
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -146,10 +153,10 @@ a:hover {
     padding-top: 55px;
 }
 
+
 #blackbox .designsbykakdiyagrahic {
     text-align: center;
 }
-
 #blackbox .designsbykakdiyagrahic hr {
     display: inline-block;
     width: auto;
@@ -166,6 +173,44 @@ a:hover {
     margin: 20px 10px;
 }
 
+#blackbox .ourstory {
+    text-align: center;
+}
+#blackbox .ourstory hr {
+    display: inline-block;
+    width: auto;
+    height: 4px;
+    background-color: #b08347;
+    border: none;
+    margin: 10px 0;
+}
+
+#blackbox .ourstory p {
+    font-size: 25px !important;
+    color: #fff;
+    text-align: left;
+    margin: 20px 10px;
+}
+
+#blackbox .whychooseus {
+    text-align: center;
+}
+#blackbox .whychooseus hr {
+    display: inline-block;
+    width: auto;
+    height: 4px;
+    background-color: #b08347;
+    border: none;
+    margin: 10px 0;
+}
+
+#blackbox .whychooseus p {
+    font-size: 25px !important;
+    color: #fff;
+    text-align: left;
+    justify-content: left;
+    margin: 20px 0 20px auto;
+}
 /* Portfolio Section */
 .portfolio-container {
     left: auto;
@@ -174,9 +219,6 @@ a:hover {
     background-color: rgb(27, 27, 27);
     height: max-content;
     max-width: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .portfolio-container h2 {
@@ -187,6 +229,9 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.portfolio-container {
+    text-align: center;
+}
 .portfolio-container hr {
     display: inline-block;
     width: auto;
@@ -201,9 +246,6 @@ a:hover {
     columns: 3;
     column-gap: 30px;
     padding: 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .portfolio-item {
@@ -213,8 +255,6 @@ a:hover {
     margin-bottom: 30px;
     break-inside: avoid;
     transition: transform 0.3s ease;
-    width: calc(33.33% - 20px);
-    margin: 10px;
 }
 
 .portfolio-item img {
@@ -261,14 +301,12 @@ a:hover {
     opacity: 0.8;
 }
 
-/* Why Choose Us Section*/
+
+/* Why Choose Us Section - Simplified */
 .why-choose-us-simple {
     background-color: rgb(27, 27, 27);
     padding: 80px 50px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .why-choose-us-simple h2 {
@@ -303,14 +341,12 @@ a:hover {
     transform: scale(1.1);
 }
 
+
 /* Footer Section */
 footer {
     background-color: rgb(20, 20, 20);
     color: white;
     padding: 50px 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .footer-content {
@@ -354,10 +390,10 @@ footer {
     color: white;
     transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
     color: #b08347;
 }
+
 
 .footer-contact p {
     margin-bottom: 20px;
@@ -376,147 +412,19 @@ footer {
     filter: brightness(0.8);
 }
 
-/*animation */
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+
+/* Email icon specific styling */
+.social-icons a[href^="mailto:"] img {
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 5px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-/* General animation class */
-.animate-slide-in {
-    animation: slideIn 1s ease-out forwards;
-}
-
-.animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-}
-
-/* Add transition for smooth scrolling effects */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.scroll-animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* General styles for smaller screens */
-@media (max-width: 768px) {
-    /* Navbar */
-    #navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    #menu.items {
-        flex-direction: column;
-        gap: 20px;
-        font-size: 20px;
-    }
-
-    #logo img {
-        width: 150px;
-        height: auto;
-    }
-
-    /* Main content */
-    #big-sizetext {
-        font-size: 30px;
-        top: -100px;
-    }
-
-    #blackbox h2 {
-        font-size: 30px;
-    }
-
-    #blackbox .designsbykakdiyagrahic p {
-        font-size: 18px;
-    }
-
-    /* Portfolio Section */
-    .portfolio-container {
-        padding: 50px 20px;
-    }
-
-    .portfolio-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .portfolio-item {
-        width: 100%;
-    }
-
-    /* Why Choose Us Section */
-    .why-choose-us-simple h2 {
-        font-size: 40px;
-    }
-
-    .big-words span {
-        font-size: 50px;
-    }
-
-    /* Footer */
-    footer {
-        padding: 20px 10px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .footer-logo img {
-        width: 150px;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Further adjustments for very small screens */
-    #menu.items {
-        font-size: 18px;
-    }
-
-    #big-sizetext {
-        font-size: 24px;
-    }
-
-    .portfolio-container h2 {
-        font-size: 24px;
-    }
-
-    .why-choose-us-simple h2 {
-        font-size: 30px;
-    }
-
-    .big-words span {
-        font-size: 36px;
-    }
-
-    .footer-links h3,
-    .footer-contact h3 {
-        font-size: 18px;
-    }
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
