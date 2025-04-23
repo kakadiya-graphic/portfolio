@@ -261,7 +261,7 @@ a:hover {
     opacity: 0.8;
 }
 
-/* Why Choose Us Section - Simplified */
+/* Why Choose Us Section*/
 .why-choose-us-simple {
     background-color: rgb(27, 27, 27);
     padding: 80px 50px;
@@ -372,11 +372,11 @@ footer {
 .social-icons img {
     width: 40px;
     height: 40px;
-    transition: all 0.3s ease; /* Fixed the incomplete transition property */
+    transition: all 0.3s ease;
     filter: brightness(0.8);
 }
 
-/* Keyframes for slide-in animation */
+/*animation */
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
