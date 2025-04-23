@@ -1,16 +1,18 @@
+<script src="script.js" defer></script>
+
 // Run when page loads
 window.onload = function() {
-  
   // Navbar scroll effect
-  var navbar = document.getElementById('navbar');
-  
-  window.onscroll = function() {
-    if (window.pageYOffset > 50) {
-      navbar.className += ' scrolled';
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    
+    // Check if the page is scrolled more than 50px
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled'); // Add the 'scrolled' class
     } else {
-      navbar.className = navbar.className.replace(' scrolled', '');
+        navbar.classList.remove('scrolled'); // Remove the 'scrolled' class
     }
-  };
+  });
   
   // Portfolio grid layout
   var grid = document.querySelector('.portfolio-grid');
@@ -38,3 +40,4 @@ window.onload = function() {
     section.scrollIntoView({behavior: 'smooth'});
   }
 };
+
